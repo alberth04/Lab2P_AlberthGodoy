@@ -5,7 +5,6 @@
  */
 package lab2p2_alberthgodoy;
 
-import java.util.Date;
 
 /**
  *
@@ -72,7 +71,8 @@ public class Empleados {
     //to String
     @Override
     public String toString() {
-        return "Empleados{" + "nombre=" + nombre + ", edad=" + edad + ", estadoTrabajo=" + estadoTrabajo + ", sueldo=" + sueldo +'}';
+   
+        return " Empleados{" + "nombre=" + nombre + ", edad=" + edad + ", estadoTrabajo=" + estadoTrabajo + ", sueldo=" + sueldo +'}';
     }
 
 }

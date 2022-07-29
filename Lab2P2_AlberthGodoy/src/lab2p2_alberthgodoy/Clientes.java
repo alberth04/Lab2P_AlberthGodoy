@@ -74,6 +74,7 @@ public class Clientes {
     //Metodo toString
     @Override
     public String toString() {
-        return "Clientes{" + "nombre=" + nombre + ", edad=" + edad + ", nIdentidad=" + nIdentidad + ", saldoPagar=" + saldoPagar + '}';
+        
+        return "Cliente={" + "nombre=" + nombre + ", edad=" + edad + ", nIdentidad=" + nIdentidad + ", saldoPagar=" + saldoPagar + '}';
     }
 }

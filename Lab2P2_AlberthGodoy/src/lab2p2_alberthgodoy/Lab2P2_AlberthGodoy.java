@@ -66,9 +66,7 @@ public class Lab2P2_AlberthGodoy {
                                 System.out.println("Ingrese su numero de identidad: ");
                                 sc = new Scanner(System.in);
                                 String nIdentidad = sc.nextLine();
-                                System.out.println("Ingrese el sueldo a pagar por el auto: ");
-                                double sueldoPagar = sc.nextDouble();
-                                clientes.add(new Clientes(nombre, edad, nIdentidad, sueldoPagar));
+                                clientes.add(new Clientes(nombre, edad, nIdentidad, 0.0));
                             }
                             break;
                             case 2: {
@@ -79,6 +77,7 @@ public class Lab2P2_AlberthGodoy {
                                     System.out.println("1.) El nombre: ");
                                     System.out.println("2.) El numero de identidad: ");
                                     System.out.println("3.) la edad");
+                                    System.out.println("4.) sueldo a pagar");
                                     int opcionM = sc.nextInt();
 
                                     switch (opcionM) {
@@ -93,12 +92,23 @@ public class Lab2P2_AlberthGodoy {
                                             sc = new Scanner(System.in);
                                             System.out.println("Ingrese el numero de identidad: ");
                                             String numId = sc.nextLine();
-                                            ((Clientes) clientes.get(p)).set;
+                                            ((Clientes) clientes.get(p)).setnIdentidad(numId);
                                         }
                                         break;
                                         case 3: {
-
+                                            sc = new Scanner(System.in);
+                                            System.out.println("Ingrese la edad: ");
+                                            int edad = sc.nextInt();
+                                            ((Clientes) clientes.get(p)).setEdad(edad);
                                         }
+                                        break;
+                                        case 4: {
+                                            sc = new Scanner(System.in);
+                                            System.out.println("Ingrese el sueldo a pagar: ");
+                                            double sueldoP = sc.nextDouble();
+                                            ((Clientes) clientes.get(p)).setSaldoPagar(sueldoP);
+                                        }
+                                        break;
                                         default:
                                             System.out.println("Saliendo...");
                                     }//fin switch
@@ -109,11 +119,21 @@ public class Lab2P2_AlberthGodoy {
                             }
                             break;
                             case 3: {
-
+                                System.out.println("Ingrese la posicion de quien desea eliminar: ");
+                                int p = sc.nextInt();
+                                if (p < clientes.size() && clientes.get(p) instanceof Clientes) {
+                                    clientes.remove(p);
+                                    System.out.println("Cliente eliminado");
+                                } else {
+                                    System.out.println("Algo salio mal...");
+                                }
                             }
                             break;
                             case 4: {
-
+                                int cont = 0;
+                                for (Object cliente : clientes) {
+                                    System.out.printf("%d%s%n",cont++,cliente);
+                                }
                             }
                             break;
                             case 5: {
@@ -140,22 +160,88 @@ public class Lab2P2_AlberthGodoy {
                         opcionMenu3 = sc.nextInt();
                         switch (opcionMenu3) {
                             case 1: {
-
+                                sc = new Scanner(System.in);
+                                System.out.println("Ingrese el nombre: ");
+                                String nombre = sc.nextLine();
+                                sc = new Scanner(System.in);
+                                System.out.println("Ingrese la edad: ");
+                                int edad = sc.nextInt();
+                                sc = new Scanner(System.in);
+                                System.out.println("Ingrese el sueldo: ");
+                                double sueldo = sc.nextDouble();
+                                empleados.add(new Empleados(nombre, edad, "Trabajando", sueldo));
                             }
                             break;
                             case 2: {
-
+                                System.out.println("Ingrese la posicion que desea modificar: ");
+                                int p = sc.nextInt();
+                                if (p < clientes.size() && clientes.get(p) instanceof Empleados) {
+                                    System.out.println("Que desea modificar: ");
+                                    System.out.println("1.) El nombre: ");
+                                    System.out.println("2.) la edad");
+                                    System.out.println("3.) sueldo a pagar");
+                                    int opcionE = sc.nextInt();
+                                    switch (opcionE) {
+                                        case 1: {
+                                            sc = new Scanner(System.in);
+                                            System.out.println("Ingrese el nombre: ");
+                                            String nombre = sc.nextLine();
+                                            ((Empleados) empleados.get(p)).setNombre(nombre);
+                                        }
+                                        break;
+                                        case 2: {
+                                            sc = new Scanner(System.in);
+                                            System.out.println("Ingrese la edad: ");
+                                            int edad = sc.nextInt();
+                                            ((Empleados) empleados.get(p)).setEdad(edad);
+                                        }
+                                        break;
+                                        case 3: {
+                                            sc = new Scanner(System.in);
+                                            System.out.println("Ingrese el sueldo: ");
+                                            double sueldo = sc.nextDouble();
+                                            ((Empleados) empleados.get(p)).setSueldo(sueldo);
+                                        }
+                                        break;
+                                        default:
+                                            System.out.println("Saliendo...");
+                                    }//fin switch
+                                } else {
+                                    System.out.println("algo salio mal");
+                                }
                             }
                             break;
                             case 3: {
-
+                                System.out.println("Ingrese la posicion de el empleado que "
+                                        + "desea eliminar: ");
+                                int p = sc.nextInt();
+                                if (p < clientes.size() && clientes.get(p) instanceof Empleados) {
+                                    empleados.remove(p);
+                                } else {
+                                    System.out.println("Algo salio mal");
+                                }
                             }
                             break;
                             case 4: {
-
+                                int cont=0;
+                                for (Object empleado : empleados) {
+                                    System.out.printf("%d%s%n",cont++,empleado);
+                                }
                             }
                             break;
                             case 5: {
+                                System.out.println("Ingrese la posicion del empleado: ");
+                                int p = sc.nextInt();
+                                if (p < clientes.size() && clientes.get(p) instanceof Empleados) {
+                                    System.out.println("Ingrese el estado del trabajo: ");
+                                    System.out.println("1.) Trabajando, 2.) FueradelTrabajo");
+                                    int estadoTrabajo = sc.nextInt();
+                                    if (estadoTrabajo == 2) {
+                                        ((Empleados) empleados.get(p)).setEstadoTrabajo("Trabajando");
+                                    }
+                                } else {
+                                    System.out.println("Algo salio mal");
+                                }
 
                             }
                             break;
