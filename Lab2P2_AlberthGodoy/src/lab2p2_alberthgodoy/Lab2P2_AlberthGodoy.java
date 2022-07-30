@@ -67,20 +67,8 @@ public class Lab2P2_AlberthGodoy {
                                 System.out.println("Ingrese su numero de identidad: ");
                                 sc = new Scanner(System.in);
                                 String nIdentidad = sc.nextLine();
-                                sc = new Scanner(System.in);
-                                System.out.println("Ingrese la cantidad inicial a pagar: ");
-                                double saldo = sc.nextDouble();
-                                System.out.println("Ingrese por donde pago: ");
-                                System.out.println("1.)Banco y 2.)Local");
-                                int metodoPago = sc.nextInt();
-                                String metodoP = "";
-                                if (metodoPago == 1) {
-                                    metodoP = "Banco";
-                                } else {
-                                    metodoP = "Local";
-                                }
 
-                                clientes.add(new Clientes(nombre, edad, nIdentidad, saldo, metodoP));
+                                clientes.add(new Clientes(nombre, edad, nIdentidad, 0.0, "Banco"));
                             }
                             break;
                             case 2: {
@@ -262,7 +250,7 @@ public class Lab2P2_AlberthGodoy {
                                     System.out.println("1.) Trabajando, 2.) FueradelTrabajo");
                                     int estadoTrabajo = sc.nextInt();
                                     if (estadoTrabajo == 2) {
-                                        ((Empleados) empleados.get(p)).setEstadoTrabajo("Trabajando");
+                                        ((Empleados) empleados.get(p)).setEstadoTrabajo("Fuera del trabajo");
                                     }
                                 } else {
                                     System.out.println("Algo salio mal");
@@ -366,46 +354,45 @@ public class Lab2P2_AlberthGodoy {
                             }
                             break;
                             case 3: {
-                                int cont = 0;
                                 for (int i = 0; i < autos.size(); i++) {
                                     if (((Carros) autos.get(i)).getEstadoAuto().equals("En espera de entrar a reparación")) {
-                                        System.out.printf("%d %s%n", cont++, autos.get(i));
+                                        System.out.printf("%d %s%n", i, autos.get(i));
                                     }
                                 }
 
                                 for (int i = 0; i < autos.size(); i++) {
                                     if (((Carros) autos.get(i)).getEstadoAuto().equals("En reparacion")) {
-                                        System.out.printf("%d %s%n", cont++, autos.get(i));
+                                        System.out.printf("%d %s%n", i, autos.get(i));
                                     }
                                 }
 
                                 for (int i = 0; i < autos.size(); i++) {
                                     if (((Carros) autos.get(i)).getEstadoAuto().equals("En espera de pago reparacion")) {
-                                        System.out.printf("%d %s%n", cont++, autos.get(i));
+                                        System.out.printf("%d %s%n", i, autos.get(i));
                                     }
                                 }
 
                                 for (int i = 0; i < autos.size(); i++) {
                                     if (((Carros) autos.get(i)).getEstadoAuto().equals("Saldo pagado,pero no entregado")) {
-                                        System.out.printf("%d %s%n", cont++, autos.get(i));
+                                        System.out.printf("%d %s%n", i, autos.get(i));
                                     }
                                 }
 
                                 for (int i = 0; i < autos.size(); i++) {
                                     if (((Carros) autos.get(i)).getEstadoAuto().equals("Saldo pagado")) {
-                                        System.out.printf("%d %s%n", cont++, autos.get(i));
+                                        System.out.printf("%d %s%n", i, autos.get(i));
                                     }
                                 }
 
                                 for (int i = 0; i < autos.size(); i++) {
                                     if (((Carros) autos.get(i)).getEstadoAuto().equals("Pago recibido, en espera de ser entregado")) {
-                                        System.out.printf("%d %s%n", cont++, autos.get(i));
+                                        System.out.printf("%d %s%n", i, autos.get(i));
                                     }
 
                                 }
                                 for (int i = 0; i < autos.size(); i++) {
                                     if (((Carros) autos.get(i)).getEstadoAuto().equals("Auto entregado")) {
-                                        System.out.printf("%d %s%n", cont++, autos.get(i));
+                                        System.out.printf("%d %s%n", i, autos.get(i));
                                     }
                                 }
                             }
