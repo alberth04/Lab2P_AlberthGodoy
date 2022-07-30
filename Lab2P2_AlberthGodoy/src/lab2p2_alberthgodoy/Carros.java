@@ -18,15 +18,21 @@ public class Carros {
     private String fechaC;
     private Date fechaE;
     private String EstadoAuto;
+    private double costoReparacion;
+    private String refD;
 
     //Constructor
-    public Carros(String marca, String modelo, String fechaC, Date fechaE, String EstadoAuto) {
+
+    public Carros(String marca, String modelo, String fechaC, Date fechaE, String EstadoAuto, double costoReparacion, String refD) {
         this.marca = marca;
         this.modelo = modelo;
         this.fechaC = fechaC;
         this.fechaE = fechaE;
         this.EstadoAuto = EstadoAuto;
+        this.costoReparacion = costoReparacion;
+        this.refD = refD;
     }
+    
     
     //Getter y Setter
 
@@ -69,13 +75,32 @@ public class Carros {
     public void setEstadoAuto(String EstadoAuto) {
         this.EstadoAuto = EstadoAuto;
     }
+
+    public double getCostoReparacion() {
+        return costoReparacion;
+    }
+
+    public void setCostoReparacion(double costoReparacion) {
+        this.costoReparacion = costoReparacion;
+    }
+
+    public String getRefD() {
+        return refD;
+    }
+
+    public void setRefD(String refD) {
+        this.refD = refD;
+    }
+    
     
     //to String
 
     @Override
     public String toString() {
-        return "Carros{" + "marca=" + marca + ", modelo=" + modelo + ", fechaC=" + fechaC + ", fechaE=" + fechaE + ", EstadoAuto=" + EstadoAuto + '}';
+        return "Carros{" + "marca=" + marca + ", modelo=" + modelo + ", fechaC=" + fechaC + ", fechaE=" + fechaE + ", EstadoAuto=" + EstadoAuto + ", costoReparacion=" + costoReparacion + ", refD=" + refD + '}';
     }
+
+    
     
     
     

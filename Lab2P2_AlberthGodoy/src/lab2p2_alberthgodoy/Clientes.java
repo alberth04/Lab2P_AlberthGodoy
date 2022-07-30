@@ -16,9 +16,10 @@ public class Clientes {
     private int edad;
     private String nIdentidad;
     private double saldoPagar;
+    private String metodoPago;
 
     //Constructor
-    public Clientes(String nombre, int edad, String nIdentidad, double saldoPagar) {
+    public Clientes(String nombre, int edad, String nIdentidad, double saldoPagar,String metodoPago) {
         this.nombre = nombre;
         if (edad > 0) {
             this.edad = edad;
@@ -27,6 +28,7 @@ public class Clientes {
         if (saldoPagar >= 0.0) {
             this.saldoPagar = saldoPagar;
         }
+        this.metodoPago = metodoPago;
 
     }
     
@@ -70,6 +72,15 @@ public class Clientes {
         }
 
     }
+
+    public String getMetodoPago() {
+        return metodoPago;
+    }
+
+    public void setMetodoPago(String metodoPago) {
+        this.metodoPago = metodoPago;
+    }
+    
 
     //Metodo toString
     @Override
